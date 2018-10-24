@@ -124,7 +124,7 @@ func Destroy() {
 
 // Scale is used to scale the  infrastructure and Kubernetes
 func Scale() {
-	var confirmation string
+	// var confirmation string
 	// Scale the  infrastructure
 	fmt.Printf("\t\t===============Starting  Scaling====================\n\n")
 	_, osLabel := distSelect()

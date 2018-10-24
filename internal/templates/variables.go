@@ -1,5 +1,46 @@
 package templates
 
+var VariablesRKE = `
+variable "cluster_name" {
+  default     = "{{.ClusterName}}"
+  type        = "string"
+  description = "The name of your EKS Cluster"
+}
+
+variable "aws_region" {
+  default     = "{{.AWSRegion}}"
+  # availabe regions are:
+  # us-east-1 (Virginia)
+  # us-west-2 (Oregon)
+  # eu-west-1 (Irland)
+  type        = "string"
+  description = "The AWS Region to deploy EKS"
+}
+
+variable "rke_node_instance_type" {
+  default     = "{{.RKENodeInstanceType}}"
+  type        = "string"
+  description = "Worker Node EC2 instance type"
+}
+
+variable "node_count" {
+  default     = {{.NodeCount}}
+  type        = "string"
+  description = "Autoscaling Desired node capacity"
+}
+
+variable "ssh_key_path" {
+  default = "{{.SSHKeyPath}}"
+  type    = "string"
+  description = "path to your rke public key"
+}
+
+variable "cloud_provider" {
+  default = "{{.CloudProvider}}"
+  type    = "string"
+  description = "cloud provider for rke cluster" 
+}
+`
 var VariablesEKS = `
 # Variables Configuration
 variable "cluster-name" {
@@ -165,4 +206,47 @@ variable "default_tags" {
   description = "Default tags for all resources"
   type = "map"
 }
+
+/*
+* sd changes
+*/
+variable "aws_nlb_name" {
+  description = "NLB name"
+  type        = "list"
+  default     = ["rancher-tcp-443", "rancher-tcp-80"]
+}
+
+variable "aws_nlb_port" {
+  description = "NLB ports"
+  type        = "list"
+  default     = ["443", "80"]
+}
+
+variable "aws_nlb_protocol" {
+  description = "NLB protocol"
+  default     = "TCP"
+}
+
+variable "aws_nlb_target_type" {
+  description = "NLB target type"
+  default     = "instance"
+}
+
+variable "aws_nlb_health_check_defaults" {
+  description = "Default values for NLB health checks"
+  type        = "map"
+
+  default = {
+    "health_check_interval"            = 10
+    "health_check_healthy_threshold"   = 3
+    "health_check_path"                = "/healthz"
+    "health_check_port"                = "80"
+    "health_check_protocol"            = "HTTP"
+    "health_check_timeout"             = 6
+    "health_check_healthy_threshold"   = 3
+    "health_check_unhealthy_threshold" = 3
+    "target_type"                      = "instance"
+  }
+}
+
 `

@@ -1,0 +1,219 @@
+nodes:
+- address: ec2-18-188-12-112.us-east-2.compute.amazonaws.com
+  port: "22"
+  internal_address: ec2-18-188-12-112.us-east-2.compute.amazonaws.com
+  role:
+  - controlplane
+  - worker
+  - etcd
+  hostname_override: ec2-18-188-12-112.us-east-2.compute.amazonaws.com
+  user: ubuntu
+  docker_socket: ""
+  ssh_key: |-
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEogIBAAKCAQEAl3X8WuQ060q+8J5hsPPO8KnxPfFaBIHKO16jo2o6ihleOq031bl001m6F0gZ
+    c00chocbHQiKRuHbIy28d62vdYJzLzeAAqBbbm5Osz/ylHVt2ZICdYbyvhKwV141Wnsk7sxrU9V+
+    E8IwJTlNtzepy71AxhXvvcPdATKWMIWqkt8+j8oBT/X6xSRuym3DBUaLycYushmZCVKXjLTFaekN
+    KpMm32J5GjZcZ8jynEOpr5YeAkohiJlO8QrzjPnrRTiz5ZdDbBw4iWN9BJ1MpBAYdsGj2vsn7Vor
+    7ZzvXEDA+ilHTqeTqSqV8ndDeIB182w0h/qULjBWDqI4F7VnRY0xmwIDAQABAoIBAEbzyZUWpMe4
+    yzvTJjaL8FyDb/SxlJbZ6k/npMbP475/5cmdDbP8XgMIXIm9h9agwAUxU31FW+maslqHeWujHLfy
+    tVzgJgKU9mAEIrAL++qaHCy5HpfJ8PsjrCIxitLpL0MC1iB+ucItzPoTHxn+ZHeCH87rxdRi5axC
+    82Klq2ODoLfQlZKHUVaz9VwuksM45zFauBBhIY1hFjzPF9qGMgssuShgxkPkQ+neH5bCY1vADQ8j
+    2kVgpZ+cAWXA+A4mnayDgzvsRmJXyegNk+qKDk3M/af6KE2sKEtFjfbPkxKoeVHUliz0sbb9Naqk
+    TExSmFu9QqWsRmsrU7NMlofwX4kCgYEA5GhwZQuXaMOGpNtp12W/LC7Svg0Y/5UkNKk+VeeGjhaA
+    E5mCnj5aiYmcE3f4R9/dSbuJf4zLz1v4NwPinVHtmPYTwBhduI3Trn9EkcHzZS93e4AfgyCRUKS3
+    cMJRRNh/Mjk1yUzytCxVOoIVQy/ImbQUNFKB+nsJn/vqBVeXlT0CgYEAqcHxcVkRA+Bm1EwXEOgA
+    XIr7xEU7r8FKTGRjvlYU+iBeDV5SzdH5IHTX2T01xqwyVLiMcE8uEyNbH3Ldq6He6i3q3MMb2MYr
+    QDNquYgMXdOqa/SQHII8Ed1sRIEGH/bXeAz/liG5kJwXRdwccRbZinK573bT43T2a4JUmibNv7cC
+    gYBuzd+glVP5Zck+1pZtARYR6BEiU5ZJ/t8WkPgFkpDrAy1U1MbR36vqRxCpPSz8KTTf3ROiBfql
+    eJdckQzxhto9tzrzmJ52to73exQXpcBe2P0cs5YV9cmpFo9LK2ljfaePBMP8CNFA6LTb8llAQ8EM
+    F5kpnNEjY2bS7tGjj8+gfQKBgAsLe1IMoXbHGumlKbsH3T4oLMlQV9nPka32uiagIy1C/duQz4Jk
+    rvjVoVWZDe6nNX8dosWL4UuNeVhKePG5zm8eHbHPX/hyrE25CrCXkXZpVyU+/EFel9nxtiGe428g
+    +FPvRJHYD+LAxSLed1tESVMgs8hIyvB5o67LBAYjkC9xAoGAYaCX1BUKjt7ExcbWn49Q3arGdL3p
+    Di3H29wHTDtyGM5DkF+dF5VgW589ue2ZekngbPJSDg2d5d3sNWORccGN0cQD4QSDw65rsW8wDHQh
+    yWrD6vy7lRzCsrxo4QFZHNI34NCOHCBrAKuvPy9/qSvYilVOP+Uh7yHnTAcUU1O8vGU=
+    -----END RSA PRIVATE KEY-----
+  ssh_key_path: ~/.ssh/id_rsa
+  labels: {}
+- address: ec2-18-219-39-211.us-east-2.compute.amazonaws.com
+  port: "22"
+  internal_address: ec2-18-219-39-211.us-east-2.compute.amazonaws.com
+  role:
+  - controlplane
+  - worker
+  - etcd
+  hostname_override: ec2-18-219-39-211.us-east-2.compute.amazonaws.com
+  user: ubuntu
+  docker_socket: ""
+  ssh_key: |-
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEogIBAAKCAQEAl3X8WuQ060q+8J5hsPPO8KnxPfFaBIHKO16jo2o6ihleOq031bl001m6F0gZ
+    c00chocbHQiKRuHbIy28d62vdYJzLzeAAqBbbm5Osz/ylHVt2ZICdYbyvhKwV141Wnsk7sxrU9V+
+    E8IwJTlNtzepy71AxhXvvcPdATKWMIWqkt8+j8oBT/X6xSRuym3DBUaLycYushmZCVKXjLTFaekN
+    KpMm32J5GjZcZ8jynEOpr5YeAkohiJlO8QrzjPnrRTiz5ZdDbBw4iWN9BJ1MpBAYdsGj2vsn7Vor
+    7ZzvXEDA+ilHTqeTqSqV8ndDeIB182w0h/qULjBWDqI4F7VnRY0xmwIDAQABAoIBAEbzyZUWpMe4
+    yzvTJjaL8FyDb/SxlJbZ6k/npMbP475/5cmdDbP8XgMIXIm9h9agwAUxU31FW+maslqHeWujHLfy
+    tVzgJgKU9mAEIrAL++qaHCy5HpfJ8PsjrCIxitLpL0MC1iB+ucItzPoTHxn+ZHeCH87rxdRi5axC
+    82Klq2ODoLfQlZKHUVaz9VwuksM45zFauBBhIY1hFjzPF9qGMgssuShgxkPkQ+neH5bCY1vADQ8j
+    2kVgpZ+cAWXA+A4mnayDgzvsRmJXyegNk+qKDk3M/af6KE2sKEtFjfbPkxKoeVHUliz0sbb9Naqk
+    TExSmFu9QqWsRmsrU7NMlofwX4kCgYEA5GhwZQuXaMOGpNtp12W/LC7Svg0Y/5UkNKk+VeeGjhaA
+    E5mCnj5aiYmcE3f4R9/dSbuJf4zLz1v4NwPinVHtmPYTwBhduI3Trn9EkcHzZS93e4AfgyCRUKS3
+    cMJRRNh/Mjk1yUzytCxVOoIVQy/ImbQUNFKB+nsJn/vqBVeXlT0CgYEAqcHxcVkRA+Bm1EwXEOgA
+    XIr7xEU7r8FKTGRjvlYU+iBeDV5SzdH5IHTX2T01xqwyVLiMcE8uEyNbH3Ldq6He6i3q3MMb2MYr
+    QDNquYgMXdOqa/SQHII8Ed1sRIEGH/bXeAz/liG5kJwXRdwccRbZinK573bT43T2a4JUmibNv7cC
+    gYBuzd+glVP5Zck+1pZtARYR6BEiU5ZJ/t8WkPgFkpDrAy1U1MbR36vqRxCpPSz8KTTf3ROiBfql
+    eJdckQzxhto9tzrzmJ52to73exQXpcBe2P0cs5YV9cmpFo9LK2ljfaePBMP8CNFA6LTb8llAQ8EM
+    F5kpnNEjY2bS7tGjj8+gfQKBgAsLe1IMoXbHGumlKbsH3T4oLMlQV9nPka32uiagIy1C/duQz4Jk
+    rvjVoVWZDe6nNX8dosWL4UuNeVhKePG5zm8eHbHPX/hyrE25CrCXkXZpVyU+/EFel9nxtiGe428g
+    +FPvRJHYD+LAxSLed1tESVMgs8hIyvB5o67LBAYjkC9xAoGAYaCX1BUKjt7ExcbWn49Q3arGdL3p
+    Di3H29wHTDtyGM5DkF+dF5VgW589ue2ZekngbPJSDg2d5d3sNWORccGN0cQD4QSDw65rsW8wDHQh
+    yWrD6vy7lRzCsrxo4QFZHNI34NCOHCBrAKuvPy9/qSvYilVOP+Uh7yHnTAcUU1O8vGU=
+    -----END RSA PRIVATE KEY-----
+  ssh_key_path: ~/.ssh/id_rsa
+  labels: {}
+- address: ec2-18-191-95-23.us-east-2.compute.amazonaws.com
+  port: "22"
+  internal_address: ec2-18-191-95-23.us-east-2.compute.amazonaws.com
+  role:
+  - controlplane
+  - worker
+  - etcd
+  hostname_override: ec2-18-191-95-23.us-east-2.compute.amazonaws.com
+  user: ubuntu
+  docker_socket: ""
+  ssh_key: |-
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEogIBAAKCAQEAl3X8WuQ060q+8J5hsPPO8KnxPfFaBIHKO16jo2o6ihleOq031bl001m6F0gZ
+    c00chocbHQiKRuHbIy28d62vdYJzLzeAAqBbbm5Osz/ylHVt2ZICdYbyvhKwV141Wnsk7sxrU9V+
+    E8IwJTlNtzepy71AxhXvvcPdATKWMIWqkt8+j8oBT/X6xSRuym3DBUaLycYushmZCVKXjLTFaekN
+    KpMm32J5GjZcZ8jynEOpr5YeAkohiJlO8QrzjPnrRTiz5ZdDbBw4iWN9BJ1MpBAYdsGj2vsn7Vor
+    7ZzvXEDA+ilHTqeTqSqV8ndDeIB182w0h/qULjBWDqI4F7VnRY0xmwIDAQABAoIBAEbzyZUWpMe4
+    yzvTJjaL8FyDb/SxlJbZ6k/npMbP475/5cmdDbP8XgMIXIm9h9agwAUxU31FW+maslqHeWujHLfy
+    tVzgJgKU9mAEIrAL++qaHCy5HpfJ8PsjrCIxitLpL0MC1iB+ucItzPoTHxn+ZHeCH87rxdRi5axC
+    82Klq2ODoLfQlZKHUVaz9VwuksM45zFauBBhIY1hFjzPF9qGMgssuShgxkPkQ+neH5bCY1vADQ8j
+    2kVgpZ+cAWXA+A4mnayDgzvsRmJXyegNk+qKDk3M/af6KE2sKEtFjfbPkxKoeVHUliz0sbb9Naqk
+    TExSmFu9QqWsRmsrU7NMlofwX4kCgYEA5GhwZQuXaMOGpNtp12W/LC7Svg0Y/5UkNKk+VeeGjhaA
+    E5mCnj5aiYmcE3f4R9/dSbuJf4zLz1v4NwPinVHtmPYTwBhduI3Trn9EkcHzZS93e4AfgyCRUKS3
+    cMJRRNh/Mjk1yUzytCxVOoIVQy/ImbQUNFKB+nsJn/vqBVeXlT0CgYEAqcHxcVkRA+Bm1EwXEOgA
+    XIr7xEU7r8FKTGRjvlYU+iBeDV5SzdH5IHTX2T01xqwyVLiMcE8uEyNbH3Ldq6He6i3q3MMb2MYr
+    QDNquYgMXdOqa/SQHII8Ed1sRIEGH/bXeAz/liG5kJwXRdwccRbZinK573bT43T2a4JUmibNv7cC
+    gYBuzd+glVP5Zck+1pZtARYR6BEiU5ZJ/t8WkPgFkpDrAy1U1MbR36vqRxCpPSz8KTTf3ROiBfql
+    eJdckQzxhto9tzrzmJ52to73exQXpcBe2P0cs5YV9cmpFo9LK2ljfaePBMP8CNFA6LTb8llAQ8EM
+    F5kpnNEjY2bS7tGjj8+gfQKBgAsLe1IMoXbHGumlKbsH3T4oLMlQV9nPka32uiagIy1C/duQz4Jk
+    rvjVoVWZDe6nNX8dosWL4UuNeVhKePG5zm8eHbHPX/hyrE25CrCXkXZpVyU+/EFel9nxtiGe428g
+    +FPvRJHYD+LAxSLed1tESVMgs8hIyvB5o67LBAYjkC9xAoGAYaCX1BUKjt7ExcbWn49Q3arGdL3p
+    Di3H29wHTDtyGM5DkF+dF5VgW589ue2ZekngbPJSDg2d5d3sNWORccGN0cQD4QSDw65rsW8wDHQh
+    yWrD6vy7lRzCsrxo4QFZHNI34NCOHCBrAKuvPy9/qSvYilVOP+Uh7yHnTAcUU1O8vGU=
+    -----END RSA PRIVATE KEY-----
+  ssh_key_path: ~/.ssh/id_rsa
+  labels: {}
+services:
+  etcd:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    external_urls: []
+    ca_cert: ""
+    cert: ""
+    key: ""
+    path: ""
+    snapshot: false
+    retention: ""
+    creation: ""
+  kube-api:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    service_cluster_ip_range: ""
+    service_node_port_range: ""
+    pod_security_policy: false
+  kube-controller:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    cluster_cidr: ""
+    service_cluster_ip_range: ""
+  scheduler:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+  kubelet:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    cluster_domain: ""
+    infra_container_image: ""
+    cluster_dns_server: ""
+    fail_swap_on: false
+  kubeproxy:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+network:
+  plugin: ""
+  options: {}
+authentication:
+  strategy: ""
+  options: {}
+  sans: []
+addons: ""
+addons_include: []
+system_images:
+  etcd: ""
+  alpine: ""
+  nginx_proxy: ""
+  cert_downloader: ""
+  kubernetes_services_sidecar: ""
+  kubedns: ""
+  dnsmasq: ""
+  kubedns_sidecar: ""
+  kubedns_autoscaler: ""
+  kubernetes: ""
+  flannel: ""
+  flannel_cni: ""
+  calico_node: ""
+  calico_cni: ""
+  calico_controllers: ""
+  calico_ctl: ""
+  canal_node: ""
+  canal_cni: ""
+  canal_flannel: ""
+  wave_node: ""
+  weave_cni: ""
+  pod_infra_container: ""
+  ingress: ""
+  ingress_backend: ""
+  metrics_server: ""
+ssh_key_path: ""
+ssh_agent_auth: false
+authorization:
+  mode: ""
+  options: {}
+ignore_docker_version: false
+kubernetes_version: ""
+private_registries: []
+ingress:
+  provider: ""
+  options: {}
+  node_selector: {}
+  extra_args: {}
+cluster_name: ""
+cloud_provider:
+  name: aws
+prefix_path: ""
+addon_job_timeout: 0
+bastion_host:
+  address: ""
+  port: ""
+  user: ""
+  ssh_key: ""
+  ssh_key_path: ""
+monitoring:
+  provider: ""
+  options: {}
