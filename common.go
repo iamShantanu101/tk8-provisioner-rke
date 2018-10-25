@@ -83,7 +83,7 @@ func (p RKE) Reset(args []string) {
 func (p RKE) Remove(args []string) {
 	// remove rke cluster, not complete infra
 	// equivalent to rke remove --config rancher-cluster.yml
-	cluster.Remove()
+	cluster.RKERemove()
 
 }
 
@@ -93,7 +93,7 @@ func (p RKE) Upgrade(args []string) {
 
 func (p RKE) Destroy(args []string) {
 	// teardown complete infra
-	cluster.Destroy()
+	cluster.RKEDestroy()
 }
 
 func NewRKE() cluster.Provisioner {

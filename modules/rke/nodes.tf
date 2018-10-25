@@ -23,11 +23,6 @@ resource "aws_key_pair" "rke-node-key" {
   public_key = "${file(var.ssh_key_path)}"
 }
 
-resource "random_integer" "priority" {
-  min = 1
-  max = 99999
-}
-
 resource "aws_security_group" "rke_security_group" {
   name        = "rke-sg-1"
   description = "Allow inbound/outbound traffic for rke"
@@ -129,10 +124,17 @@ resource "aws_lb_target_group" "rancher-target-groups" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "attach_nodes_rancher_tg" {
-  count            = 2
-  target_group_arn = "${element(aws_lb_target_group.rancher-target-groups.*.arn, count.index)}"
-  target_id        = "${element(aws_instance.rke-node.*.id,count.index)}"
+resource "aws_lb_target_group_attachment" "attach_nodes_rancher_tg-80" {
+  count            = "${aws_instance.rke-node.count}"
+  target_group_arn = "${aws_lb_target_group.rancher-target-groups.0.arn}"
+  target_id        = "${element(aws_instance.rke-node.*.id, count.index)}"
+}
+
+
+resource "aws_lb_target_group_attachment" "attach_nodes_rancher_tg-443" {
+  count            = "${aws_instance.rke-node.count}"
+  target_group_arn = "${aws_lb_target_group.rancher-target-groups.1.arn}"
+  target_id        = "${element(aws_instance.rke-node.*.id, count.index)}"
 }
 
 resource "aws_lb" "test" {

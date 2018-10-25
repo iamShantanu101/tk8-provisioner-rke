@@ -79,19 +79,23 @@ func Install() {
 	}
 	// // Export KUBECONFIG file to the installation folder
 	log.Println("Moving kubeconfig and rke cluster config files to the installation folder")
-	errmvKubeconfig := os.Rename("./inventory"+Name+"/provisioner/kube_config_cluster.yml", "./kube_config_cluster.yml")
+	kubeConfigold := "./inventory" + Name + "/provisioner/kube_config_rancher-cluster.yml"
+	kubeConfignew := "./kube_config_rancher-cluster.yml"
+	rkeConfigold := "./inventory" + Name + "/provisioner/rancher-cluster.yml"
+	rkeConfignew := "./rancher-cluster.yml"
+	errmvKubeconfig := os.Rename(kubeConfigold, kubeConfignew)
 
 	if errmvKubeconfig != nil {
 		fmt.Println(err)
 	}
 
-	errmvRkeConfig := os.Rename("./inventory"+Name+"/provisioner/rancher-cluster.yml", "./rancher-cluster.yml")
+	errmvRkeConfig := os.Rename(rkeConfigold, rkeConfignew)
 
 	if errmvRkeConfig != nil {
 		fmt.Println(err)
 	}
 
-	// log.Println("Voila! Kubernetes cluster created with RKE is up and running")
+	log.Println("Voila! Kubernetes cluster created with RKE is up and running")
 
 	os.Exit(0)
 
@@ -104,12 +108,12 @@ func RKEReset() {
 
 // Remove is used to remove the Kubernetes Cluster from the infrastructure
 func RKERemove() {
-	NotImplemented()
+	// NotImplemented()
 	log.Println("Removing rke cluster")
-	rkeRemove := exec.Command("rke", "remove", "--config rancher-cluster.yml")
-	stdout, err := rkeRemoveSet.StdoutPipe()
-	rkeRemoveSet.Stderr = rkeRemoveSet.Stdout
-	rkeRemoveSet.Start()
+	rkeRemove := exec.Command("rke", "remove", "--config", "./rancher-cluster.yml")
+	stdout, err := rkeRemove.StdoutPipe()
+	rkeRemove.Stderr = rkeRemove.Stdout
+	rkeRemove.Start()
 
 	scanner := bufio.NewScanner(stdout)
 	for scanner.Scan() {
@@ -117,8 +121,32 @@ func RKERemove() {
 		fmt.Println(m)
 	}
 
-	terrSet.Wait()
+	rkeRemove.Wait()
 	if err != nil {
 		panic(err)
 	}
+	log.Println("Successfully removed rke cluster")
+}
+
+func RKEDestroy() {
+	config := GetRKEConfig()
+	Name := config.ClusterName
+	log.Println("starting terraform destroy")
+	terrDes := exec.Command("terraform", "destroy", "-var-file=credentials.tfvars", "-auto-approve")
+	terrDes.Dir = "./inventory/" + Name + "/provisioner/"
+	stdout, err := terrDes.StdoutPipe()
+	terrDes.Stderr = terrDes.Stdout
+	terrDes.Start()
+
+	scanner := bufio.NewScanner(stdout)
+	for scanner.Scan() {
+		m := scanner.Text()
+		fmt.Println(m)
+	}
+
+	terrDes.Wait()
+	if err != nil {
+		panic(err)
+	}
+
 }

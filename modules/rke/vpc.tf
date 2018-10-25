@@ -1,3 +1,7 @@
+locals {
+  cluster_id_tag = "${map("kubernetes.io/cluster/${var.cluster_id}", "owned")}"
+}
+
 data "aws_availability_zones" "available" {}
 
 resource "aws_vpc" "rke-vpc" {
@@ -7,7 +11,7 @@ resource "aws_vpc" "rke-vpc" {
   tags = "${
     map(
      "Name", "${var.cluster_name}-rke-vpc",
-     "kubernetes.io/cluster/${var.cluster_name}", "shared",
+     "${local.cluster_id_tag}",
     )
   }"
 }
@@ -22,7 +26,7 @@ resource "aws_subnet" "rke-subnet" {
   tags = "${
     map(
      "Name", "${var.cluster_name}-rke",
-     "kubernetes.io/cluster/${var.cluster_name}", "shared",
+     "${local.cluster_id_tag}",
     )
   }"
 }
